@@ -1,0 +1,65 @@
+# Copyright (C) 2022 Anton Zhary
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WC Delivery Date 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-delivery-date\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-06-16T16:54:37+03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: wc-delivery-date\n"
+
+#. Plugin Name of the plugin
+msgid "WC Delivery Date"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/a-zhary/wc-delivery-date"
+msgstr ""
+
+#. Description of the plugin
+msgid "Дает покупателю возможность выбрать дату и время доставки на странице оформления заказа"
+msgstr ""
+
+#. Author of the plugin
+msgid "Anton Zhary"
+msgstr ""
+
+#: inc/Base/Fields.php:34
+#: views/front-checkout-complete.php:7
+msgid "Date"
+msgstr ""
+
+#: inc/Base/Fields.php:55
+#: inc/Base/Fields.php:77
+#: views/front-checkout-complete.php:8
+msgid "Time"
+msgstr ""
+
+#: inc/Base/Fields.php:117
+#: views/admin-order.php:14
+msgid "Delivery Date"
+msgstr ""
+
+#: inc/Base/Fields.php:122
+msgid "Delivery Time"
+msgstr ""
+
+#: views/admin-order.php:8
+#: views/front-checkout-complete.php:3
+#: views/front-checkout.php:5
+msgid "Desired days and hours of delivery"
+msgstr ""
+
+#: views/admin-order.php:21
+msgid "Delivery Time From"
+msgstr ""
+
+#: views/admin-order.php:28
+msgid "Delivery Time To"
+msgstr ""

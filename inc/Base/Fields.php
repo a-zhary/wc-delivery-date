@@ -26,49 +26,56 @@ class Fields extends BaseController {
 
 		$fields[ 'wcdd_delivery_fields' ] = [
 			'wcdd_datepicker' => [
-				'type'     => 'text',
-				'required' => true,
-				'class'    => [ 'wcdd-delivery__datepicker' ],
-				'id'       => 'wcdd-datepicker',
+				'type'        => 'text',
+				'required'    => true,
+				'class'       => [ 'wcdd-delivery__datepicker' ],
+				'input_class' => [ 'wcdd-delivery__datepicker-input' ],
+				'id'          => 'wcdd-datepicker',
+				'label'       => __( 'Date', 'wc-delivery-date' ),
+				'label_class' => [ 'wcdd-delivery__label' ]
 			],
 			'wcdd_time_from'  => [
-				'type'     => 'select',
-				'required' => true,
-				'class'    => [ 'wcdd-delivery__from' ],
-				'options'  => [
-					'10' => '10:00',
-					'11' => '11:00',
-					'12' => '12:00',
-					'13' => '13:00',
-					'14' => '14:00',
-					'15' => '15:00',
-					'16' => '16:00',
-					'17' => '17:00',
-					'18' => '18:00',
-					'19' => '19:00',
-					'20' => '20:00',
-					'21' => '21:00',
+				'type'        => 'select',
+				'required'    => true,
+				'class'       => [ 'wcdd-delivery__clock', 'wcdd-delivery__clock--from' ],
+				'options'     => [
+					'10:00' => '10:00',
+					'11:00' => '11:00',
+					'12:00' => '12:00',
+					'13:00' => '13:00',
+					'14:00' => '14:00',
+					'15:00' => '15:00',
+					'16:00' => '16:00',
+					'17:00' => '17:00',
+					'18:00' => '18:00',
+					'19:00' => '19:00',
+					'20:00' => '20:00',
+					'21:00' => '21:00',
 				],
+				'label'       => __( 'Time', 'wc-delivery-date' ),
+				'label_class' => [ 'wcdd-delivery__label' ]
 			],
 			'wcdd_time_to'    => [
-				'type'     => 'select',
-				'required' => true,
-				'class'    => [ 'wcdd-delivery__to' ],
-				'options'  => [
-					'11' => '11:00',
-					'12' => '12:00',
-					'13' => '13:00',
-					'14' => '14:00',
-					'15' => '15:00',
-					'16' => '16:00',
-					'17' => '17:00',
-					'18' => '18:00',
-					'19' => '19:00',
-					'20' => '20:00',
-					'21' => '21:00',
-					'22' => '22:00',
-					'23' => '23:00',
+				'type'        => 'select',
+				'required'    => true,
+				'class'       => [ 'wcdd-delivery__clock', 'wcdd-delivery__clock--to' ],
+				'options'     => [
+					'11:00' => '11:00',
+					'12:00' => '12:00',
+					'13:00' => '13:00',
+					'14:00' => '14:00',
+					'15:00' => '15:00',
+					'16:00' => '16:00',
+					'17:00' => '17:00',
+					'18:00' => '18:00',
+					'19:00' => '19:00',
+					'20:00' => '20:00',
+					'21:00' => '21:00',
+					'22:00' => '22:00',
+					'23:00' => '23:00',
 				],
+				'label'       => __( 'Time', 'wc-delivery-date' ),
+				'label_class' => [ 'wcdd-delivery__label' ]
 			],
 		];
 
@@ -105,12 +112,18 @@ class Fields extends BaseController {
 	}
 
 	// add the field to email template
-	public function email_order( $order, $sent_to_admin, $plain_text ) {
-		$order[ 'wcdd_delivery_date' ] = [
+	public function email_order( $fields, $sent_to_admin, $order ) {
+		$fields[ 'wcdd_delivery_date' ] = [
 			'label' => __( 'Delivery Date', 'wc-delivery-date' ),
 			'value' => get_post_meta( $order->id, '_wcdd_datepicker', true ),
 		];
 
-		return $order;
+		$fields[ 'wcdd_delivery_time' ] = [
+			'label' => __( 'Delivery Time', 'wc-delivery-date' ),
+			'value' => get_post_meta( $order->id, '_wcdd_time_from', true ) . ' - ' . get_post_meta( $order->id,
+					'_wcdd_time_to', true ),
+		];
+
+		return $fields;
 	}
 }

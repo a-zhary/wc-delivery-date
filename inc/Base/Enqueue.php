@@ -5,8 +5,6 @@
 
 namespace Wcdd\Base;
 
-use Wcdd\Base\BaseController;
-
 /**
  *
  */
@@ -18,9 +16,14 @@ class Enqueue extends BaseController {
 	function enqueue() {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'wcdd-main-script',
-			$this->plugin_url . '/assets/js/app.js',
-			[ 'jquery' ],
-			filemtime( $this->plugin_path . '/assets/js/app.js' ),
+			$this->plugin_url . 'assets/js/app.js',
+			[ 'jquery', 'selectWoo' ],
+			filemtime( $this->plugin_path . 'assets/js/app.js' ),
 			true );
+
+		wp_enqueue_style( 'wcdd-main-style', $this->plugin_url . 'assets/css/main.css', [],
+			filemtime( $this->plugin_path . 'assets/css/main.css' ),
+			'all'
+		);
 	}
 }

@@ -1,6 +1,1 @@
-jQuery(function ($) {
-    $("#wcdd-datepicker").datepicker({
-        dateFormat: 'dd.mm'
-    });
-    console.log('init')
-});
+(()=>{var r,e={80:()=>{jQuery((function(r){r("#wcdd-datepicker").datepicker({dateFormat:"dd.mm",minDate:0}),r(".wcdd-delivery__clock select").select2({dropdownAutoWidth:!0,width:"100%"})}))},617:()=>{}},t={};function o(r){var i=t[r];if(void 0!==i)return i.exports;var n=t[r]={exports:{}};return e[r](n,n.exports,o),n.exports}o.m=e,r=[],o.O=(e,t,i,n)=>{if(!t){var a=1/0;for(v=0;v<r.length;v++){for(var[t,i,n]=r[v],d=!0,c=0;c<t.length;c++)(!1&n||a>=n)&&Object.keys(o.O).every((r=>o.O[r](t[c])))?t.splice(c--,1):(d=!1,n<a&&(a=n));if(d){r.splice(v--,1);var l=i();void 0!==l&&(e=l)}}return e}n=n||0;for(var v=r.length;v>0&&r[v-1][2]>n;v--)r[v]=r[v-1];r[v]=[t,i,n]},o.o=(r,e)=>Object.prototype.hasOwnProperty.call(r,e),(()=>{var r={773:0,870:0};o.O.j=e=>0===r[e];var e=(e,t)=>{var i,n,[a,d,c]=t,l=0;if(a.some((e=>0!==r[e]))){for(i in d)o.o(d,i)&&(o.m[i]=d[i]);if(c)var v=c(o)}for(e&&e(t);l<a.length;l++)n=a[l],o.o(r,n)&&r[n]&&r[n][0](),r[n]=0;return o.O(v)},t=self.webpackChunk=self.webpackChunk||[];t.forEach(e.bind(null,0)),t.push=e.bind(null,t.push.bind(t))})(),o.O(void 0,[870],(()=>o(80)));var i=o.O(void 0,[870],(()=>o(617)));i=o.O(i)})();

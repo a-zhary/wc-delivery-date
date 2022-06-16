@@ -1,20 +1,26 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
-    },
-    "devDependencies": {
-        "axios": "^0.21",
-        "browser-sync": "^2.27.10",
-        "browser-sync-webpack-plugin": "^2.3.0",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "translate": "npm run translate:pot && npm run translate:js",
+    "translate:pot": "wp i18n make-pot . languages/wc-delivery-date.pot --exclude=\"node_modules\"",
+    "translate:js": "wp i18n make-json languages --no-purge --pretty-print"
+  },
+  "devDependencies": {
+    "axios": "^0.21",
+    "browser-sync": "^2.27.10",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "jquery": "^3.6.0",
+    "laravel-mix": "^6.0.6",
+    "lodash": "^4.17.19",
+    "postcss": "^8.1.14",
+    "sass": "^1.52.3",
+    "sass-loader": "^12.6.0"
+  }
 }

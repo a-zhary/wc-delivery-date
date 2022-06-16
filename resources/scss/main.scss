@@ -1,0 +1,98 @@
+.wcdd-delivery {
+    &__group {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__datepicker {
+        position: relative;
+        padding-left: 40px;
+        margin-right: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background-image: url('../images/calendar.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    }
+
+    .wcdd-delivery__datepicker {
+        .wcdd-delivery__datepicker-input.input-text {
+            height: 100%;
+            padding: 1.1rem;
+        }
+    }
+
+    &__clock {
+        position: relative;
+
+        &--from {
+            padding-left: 40px;
+            padding-right: 25px;
+
+            &::before,
+            &::after {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                left: 0;
+                width: 28px;
+                height: 28px;
+                background-image: url('../images/clock.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            &::after {
+                right: 0;
+                width: 10px;
+                height: 1px;
+                background-color: var(--wp--preset--color--black);
+            }
+        }
+
+        &--to {
+            padding-left: 15px;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+}
+
+.ui-datepicker {
+    background-color: var(--wp--preset--color--white);
+    padding: 1.2rem 1.5rem;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    cursor: pointer;
+}
+
+.wc-delivery-table {
+    th {
+        text-transform: uppercase;
+    }
+}
