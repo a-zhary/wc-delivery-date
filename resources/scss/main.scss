@@ -1,7 +1,11 @@
 .wcdd-delivery {
+    &__heading {
+        margin: 2rem 0;
+    }
+
     &__group {
         display: flex;
-        align-items: stretch;
+        align-items: flex-start;
     }
 
     &__datepicker {
